@@ -1,0 +1,73 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import ElementNotInteractableException
+
+
+class Scraper():
+    def __init__(self, url: str = 'https://soundcloud.com/discover/sets/'):
+        self.driver = webdriver.Safari()
+        self.driver.get(url)
+
+    def load_and_accept_cookies(self, xpath: str = '//*[@id="onetrust-accept-btn-handler"]'):
+        time.sleep(2)
+        accept_cookies_button = self.driver.find_element(By.XPATH, xpath)
+        accept_cookies_button.click()
+        time.sleep(2)
+
+
+
+    def get_links_of_Top_50_charts(self):
+        li_tag = self.driver.find_element(By.XPATH, '//li[@data-test-id="selection"]')
+        next_button = li_tag.find_element(By.XPATH, '//button[@class="tileGallery__sliderButton tileGallery__slideForwardButton sc-button sc-button-small sc-button-icon"]')
+        # Click the next button until it is disabled
+        try: 
+            while True:
+                next_button.click()
+                time.sleep(1)
+        except ElementNotInteractableException:
+            print("Done")
+        genres = li_tag.find_elements(By.XPATH, './/div[@class="tileGallery__sliderPanelSlide"]')
+        self.all_links = []
+        for genre in genres:
+            link = genre.find_element(By.XPATH, './/a[@class="playableTile__artworkLink"]').get_attribute('href')
+            self.all_links.append(link)
+        
+
+    
+    def get_data(self):
+        for link in self.all_links:
+          self.driver.get(link)
+          self.scroll_down_page()
+          self.get_top_50()
+          self.driver.get('https://soundcloud.com/discover/sets/')
+        time.sleep(2)
+
+  
+    def scroll_down_page(self):
+        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        while True:
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)
+            new_height = self.driver.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
+        self.songs = self.driver.find_elements(By.XPATH, '//li[@class="systemPlaylistTrackList__item sc-border-light-bottom sc-px-2x"]')
+    
+    def get_top_50(self):
+        self.tracks = []
+        for song in self.songs:
+            song_title = song.find_element(By.XPATH, './/a[@class="trackItem__username sc-link-light sc-link-secondary sc-mr-0.5x"]').text
+            song_artist = song.find_element(By.XPATH, './/a[@class="trackItem__trackTitle sc-link-dark sc-link-primary sc-font-light"]').text
+            self.tracks.append([song_title , song_artist])
+        time.sleep(2)
+        print(dict(song_artist, song_title))
+        
+
+if __name__ == "__main__":
+    bot = Scraper()
+    bot.load_and_accept_cookies()
+    bot.get_links_of_Top_50_charts()
+    bot.get_data()
+
