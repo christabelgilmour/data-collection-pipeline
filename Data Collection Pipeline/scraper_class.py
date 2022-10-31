@@ -1,11 +1,13 @@
 import time
+import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import ElementNotInteractableException
 
 
+
 class Scraper():
-    def __init__(self, url: str = 'https://soundcloud.com/discover/sets/'):
+    def __init__(self, url: str = 'https://soundcloud.com/discover'):
         self.driver = webdriver.Safari()
         self.driver.get(url)
 
@@ -14,7 +16,6 @@ class Scraper():
         accept_cookies_button = self.driver.find_element(By.XPATH, xpath)
         accept_cookies_button.click()
         time.sleep(2)
-
 
 
     def get_links_of_Top_50_charts(self):
@@ -29,18 +30,27 @@ class Scraper():
             print("Done")
         genres = li_tag.find_elements(By.XPATH, './/div[@class="tileGallery__sliderPanelSlide"]')
         self.all_links = []
+        genre_titles = []
         for genre in genres:
+            genre_title = genre.find_element(By.XPATH, './/a[@class="playableTile__heading playableTile__mainHeading sc-truncate sc-type-light sc-text-secondary sc-font-light sc-link-dark sc-link-primary sc-text-h4"]').text
             link = genre.find_element(By.XPATH, './/a[@class="playableTile__artworkLink"]').get_attribute('href')
             self.all_links.append(link)
-        
+            genre_titles.append(genre_title)
+            
+        genre_dict = {"Genre" : genre_titles , "URL link" : self.all_links}
 
+        df_links = pd.DataFrame(genre_dict)
+
+        print(df_links)
+        return self.all_links
+        
     
-    def get_data(self):
-        for link in self.all_links:
+    def get_data(self, all_links):
+        for link in all_links:
           self.driver.get(link)
           self.scroll_down_page()
           self.get_top_50()
-          self.driver.get('https://soundcloud.com/discover/sets/')
+          self.driver.get('https://soundcloud.com/discover')
         time.sleep(2)
 
   
@@ -56,18 +66,30 @@ class Scraper():
         self.songs = self.driver.find_elements(By.XPATH, '//li[@class="systemPlaylistTrackList__item sc-border-light-bottom sc-px-2x"]')
     
     def get_top_50(self):
-        self.tracks = []
+        artists = []
+        titles = []
         for song in self.songs:
-            song_title = song.find_element(By.XPATH, './/a[@class="trackItem__username sc-link-light sc-link-secondary sc-mr-0.5x"]').text
-            song_artist = song.find_element(By.XPATH, './/a[@class="trackItem__trackTitle sc-link-dark sc-link-primary sc-font-light"]').text
-            self.tracks.append([song_title , song_artist])
+            song_artist = song.find_element(By.XPATH, './/a[@class="trackItem__username sc-link-light sc-link-secondary sc-mr-0.5x"]').text
+            song_title = song.find_element(By.XPATH, './/a[@class="trackItem__trackTitle sc-link-dark sc-link-primary sc-font-light"]').text
+            artists.append(song_artist)
+            titles.append(song_title)
         time.sleep(2)
-        print(dict(song_artist, song_title))
         
+        song_dict = {"Artist" : artists , "Title" : titles}
+
+        df_songs = pd.DataFrame(song_dict)
+        print(df_songs)
+    
+    def run(self):
+        self.load_and_accept_cookies()
+        self.get_links_of_Top_50_charts()
+        all_links = self.get_links_of_Top_50_charts()
+        self.get_data(all_links)
+
 
 if __name__ == "__main__":
     bot = Scraper()
-    bot.load_and_accept_cookies()
-    bot.get_links_of_Top_50_charts()
-    bot.get_data()
+    bot.run()
+
+
 
