@@ -1,5 +1,7 @@
 # Data Collection Pipeline
 
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 ## Milestone 1
 
 After setting up a github repository and choosing the website Soundcloud for my project, I created a Scraper class and used Selenium to create methods to navigate the website and use the relevant XPATH to extract data. The first function is used to accept cookies by finding the relevant button and using `click()`.
@@ -24,11 +26,17 @@ A new method is created to iterate through each of these url links and call on t
 
 <img width="943" alt="Screenshot 2022-11-15 at 12 26 10" src="https://user-images.githubusercontent.com/113252944/201919403-4d7cd037-84aa-41af-ba89-a1907483f49b.png">
 
-The second function iterates through all the songs on the webpage and dictionaries of the top 50 artist and song titles for each genre are created.
+The second function iterates through all the songs on the webpage and creates dictionaries of the top 50 artist and song titles for each genre are created.
 
 <img width="966" alt="Screenshot 2022-11-15 at 12 15 13" src="https://user-images.githubusercontent.com/113252944/201917502-26251694-55e7-4d63-9cb3-1f0a4cc8c8b0.png">
 
-Code is written to convert these dictionaries into json files and store them locally in a folder called raw_data.
+Code is written to convert these dictionaries into json files, with the genre of each chart as the filename, and these filea are stored locally in a folder called raw_data.
 
 <img width="522" alt="Screenshot 2022-11-15 at 12 33 59" src="https://user-images.githubusercontent.com/113252944/201920804-e8cd2363-c37c-454b-ba7c-b2005c147463.png">
+
+Once all these functions are producing the desired outputs, it is necessary to unit test some of the public methods to ensure they are functioning correctly.
+
+Two tests are created, to test that all the url links extracted are in a list, and to test that the last dictionary produced has 50 key-value pairs.
+
+<img width="738" alt="Screenshot 2022-11-29 at 12 01 13" src="https://user-images.githubusercontent.com/113252944/204523803-927c374b-b0f4-4ce6-8e46-1d028f56bd6d.png">
 
