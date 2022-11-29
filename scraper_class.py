@@ -80,16 +80,19 @@ class Scraper():
         all_links: list
             the url links found in the get_links_top_50
         '''
+        # list_of_dictionaries = []
         for link in all_links:
           self.driver.get(link)
           time.sleep(2)
-          self.scroll_down_page()
+          self.__scroll_down_page()
           self.top_50()
-          self.driver.get('https://soundcloud.com/discover')
+        #   list_of_dictionaries.append(self.song_dict)
+        #   self.driver.get('https://soundcloud.com/discover')
         time.sleep(2)
 
+        
   
-    def scroll_down_page(self):
+    def __scroll_down_page(self):
         '''
         This method scrolls down the webpage
         '''
@@ -115,22 +118,23 @@ class Scraper():
         titles: list
             The list of song titles found on the webpages
         '''
-        artists = []
-        titles = []
+        self.artists = []
+        self.titles = []
         genre = self.driver.find_element(By.XPATH, './/span[@class="fullHero__titleTextTitle"]/span').text
         #Iterate through the songs to extract the data
         for song in self.songs:
             song_artist = song.find_element(By.XPATH, './/a[@class="trackItem__username sc-link-light sc-link-secondary sc-mr-0.5x"]').text
             song_title = song.find_element(By.XPATH, './/a[@class="trackItem__trackTitle sc-link-dark sc-link-primary sc-font-light"]').text
-            artists.append(song_artist)
-            titles.append(song_title)
-            song_dict = {"Artist" : artists , "Title" : titles}
-        
+            self.artists.append(song_artist)
+            self.titles.append(song_title)
+            song_dict = {"Artist" : self.artists , "Title" : self.titles}
+    
         self.write_to_json(song_dict, f"{genre}.json")
         time.sleep(2)
         # df_songs = pd.DataFrame(song_dict)
         # print(df_songs)
-
+        return song_dict
+        
     def make_folder(self, foldername):
         '''
         This method is used to create a folder to store the raw data
