@@ -2,13 +2,16 @@ import time
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import ElementNotInteractableException
 
 
 
 class Scraper():
     def __init__(self, url: str = 'https://soundcloud.com/discover'):
-        self.driver = webdriver.Safari()
+        options = Options()
+        options.add_argument("headless")
+        self.driver = webdriver.Chrome(options=options)  
         self.driver.get(url)
 
     def load_and_accept_cookies(self, xpath: str = '//*[@id="onetrust-accept-btn-handler"]'):
@@ -90,6 +93,3 @@ class Scraper():
 if __name__ == "__main__":
     bot = Scraper()
     bot.run()
-
-
-
