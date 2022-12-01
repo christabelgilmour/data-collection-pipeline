@@ -1,18 +1,26 @@
 import time
 import pandas as pd
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromiumService
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.utils import ChromeType
+
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import DEFAULT_EXECUTABLE_PATH
 from selenium.common.exceptions import ElementNotInteractableException
 
 
-
 class Scraper():
-    def __init__(self, url: str = 'https://soundcloud.com/discover'):
+    def __init__(self, url: str = 'https://soundcloud.com/discover'):     
         options = Options()
-        options.add_argument("headless")
-        self.driver = webdriver.Chrome(options=options)  
+        options.add_argument('--headless')
+        self.driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()), options=options)
         self.driver.get(url)
+
+
+
 
     def load_and_accept_cookies(self, xpath: str = '//*[@id="onetrust-accept-btn-handler"]'):
         time.sleep(2)
