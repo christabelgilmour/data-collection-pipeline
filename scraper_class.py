@@ -21,7 +21,7 @@ class Scraper():
         self.driver = webdriver.Safari()
         self.driver.get(url)
 
-    def load_and_accept_cookies(self):
+    def _load_and_accept_cookies(self):
         '''
         This method is to accept the cookies button
         '''
@@ -31,7 +31,7 @@ class Scraper():
         time.sleep(2)
 
 
-    def get_links_top_50(self):
+    def _get_links_top_50(self):
         '''
         This method gets the urls of the top 50 charts for each genre
 
@@ -80,21 +80,24 @@ class Scraper():
         all_links: list
             the url links found in the get_links_top_50
         '''
-        # list_of_dictionaries = []
+        list_of_dictionaries = []
         for link in all_links:
           self.driver.get(link)
           time.sleep(2)
-          self.__scroll_down_page()
-          self.top_50()
-        #   list_of_dictionaries.append(self.song_dict)
-        #   self.driver.get('https://soundcloud.com/discover')
+          self._scroll_down_page()
+          self._top_50()
+          list_of_dictionaries.append(self.song_dict)
         time.sleep(2)
-
-        
+        print(list_of_dictionaries)
+        return list_of_dictionaries
+      
   
-    def __scroll_down_page(self):
+    def _scroll_down_page(self):
         '''
         This method scrolls down the webpage
+
+        Attributes:
+        -----------
         '''
         #Scroll down the page to ensure we retrieve all the relevant data
         last_height = self.driver.execute_script("return document.body.scrollHeight")
@@ -107,7 +110,7 @@ class Scraper():
             last_height = new_height
         self.songs = self.driver.find_elements(By.XPATH, '//li[@class="systemPlaylistTrackList__item sc-border-light-bottom sc-px-2x"]')
     
-    def top_50(self):
+    def _top_50(self):
         '''
         This method iterates through the songs in each link and creates a dictionary of the top 50 artists and song titles for each genre
 
@@ -117,6 +120,11 @@ class Scraper():
             The list of artist names found on the webpages
         titles: list
             The list of song titles found on the webpages
+        
+        Returns:
+        --------
+        dict
+            dictionary containing artist names and song titles for each genre
         '''
         self.artists = []
         self.titles = []
@@ -127,13 +135,12 @@ class Scraper():
             song_title = song.find_element(By.XPATH, './/a[@class="trackItem__trackTitle sc-link-dark sc-link-primary sc-font-light"]').text
             self.artists.append(song_artist)
             self.titles.append(song_title)
-            song_dict = {"Artist" : self.artists , "Title" : self.titles}
+            self.song_dict = {"Artist" : self.artists , "Title" : self.titles}
     
-        self.write_to_json(song_dict, f"{genre}.json")
+        #self.write_to_json(self.song_dict, f"{genre}.json")
         time.sleep(2)
         # df_songs = pd.DataFrame(song_dict)
         # print(df_songs)
-        return song_dict
         
     def make_folder(self, foldername):
         '''
@@ -162,8 +169,8 @@ class Scraper():
             json.dump(object_to_dump, outfile, indent=4)
     
     def run(self):
-        self.load_and_accept_cookies()
-        all_links = self.get_links_top_50()
+        self._load_and_accept_cookies()
+        all_links = self._get_links_top_50()
         self.get_song_data(all_links)
 
 

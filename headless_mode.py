@@ -16,9 +16,6 @@ class Scraper():
         self.driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()), options=options)
         self.driver.get(url)
 
-
-
-
     def load_and_accept_cookies(self, xpath: str = '//*[@id="onetrust-accept-btn-handler"]'):
         time.sleep(2)
         accept_cookies_button = self.driver.find_element(By.XPATH, xpath)
