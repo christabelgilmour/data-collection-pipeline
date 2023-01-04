@@ -5,8 +5,14 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import ElementNotInteractableException
+from selenium.webdriver.firefox.options import Options
 
-
+options = Options()
+options.add_argument('--headless')
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-setuid-sandbox")
+options.add_argument("--disable-extensions")
+options.add_argument("--start-maximized")
 class Scraper():
     '''
     A webscraping tool to navigate through Soundcloud and retrieve data. 
@@ -18,7 +24,7 @@ class Scraper():
 
     '''
     def __init__(self, url: str = 'https://soundcloud.com/discover'):
-        self.driver = webdriver.Safari()
+        self.driver = webdriver.Firefox(options=options)
         self.driver.get(url)
 
     def _load_and_accept_cookies(self):
@@ -35,7 +41,7 @@ class Scraper():
         '''
         This method gets the urls of the top 50 charts for each genre
 
-        Attributes:
+        Returns:
         -----------
         all_links: list
             List of all the links retrieved
@@ -79,6 +85,11 @@ class Scraper():
         -----------
         all_links: list
             the url links found in the get_links_top_50
+
+        Returns:
+        --------
+        list_of_dictionaries: list
+            list of the song dictionaries generated from _top_50()
         '''
         list_of_dictionaries = []
         for link in all_links:
@@ -95,9 +106,7 @@ class Scraper():
     def _scroll_down_page(self):
         '''
         This method scrolls down the webpage
-
-        Attributes:
-        -----------
+        
         '''
         #Scroll down the page to ensure we retrieve all the relevant data
         last_height = self.driver.execute_script("return document.body.scrollHeight")
@@ -123,7 +132,7 @@ class Scraper():
         
         Returns:
         --------
-        dict
+        song_dict
             dictionary containing artist names and song titles for each genre
         '''
         self.artists = []
@@ -137,7 +146,7 @@ class Scraper():
             self.titles.append(song_title)
             self.song_dict = {"Artist" : self.artists , "Title" : self.titles}
     
-        #self.write_to_json(self.song_dict, f"{genre}.json")
+        self.write_to_json(self.song_dict, f"{genre}.json")
         time.sleep(2)
         # df_songs = pd.DataFrame(song_dict)
         # print(df_songs)

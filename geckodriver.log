@@ -1,0 +1,147 @@
+1672840831636	geckodriver	INFO	Listening on 127.0.0.1:64998
+1672840970643	geckodriver	INFO	Listening on 127.0.0.1:65077
+1672840971156	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "65078" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofileG2EYPx"
+1672840971732	Marionette	INFO	Marionette enabled
+2023-01-04 14:02:51.811 plugin-container[12402:3386028] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 14:02:51.811 plugin-container[12402:3386028] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 14:02:51.861 plugin-container[12402:3386028] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 14:02:51.861 plugin-container[12402:3386028] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 14:02:51.861 plugin-container[12402:3386026] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 14:02:51.861 plugin-container[12402:3386026] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1672840971879	Marionette	INFO	Listening on port 65087
+Read port: 65087
+WebDriver BiDi listening on ws://127.0.0.1:65078
+1672840972063	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofileG2EYPx/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65078/devtools/browser/853d35c0-6c30-4361-a985-961326d5703b
+1672840974257	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1672843472928	geckodriver	INFO	Listening on 127.0.0.1:65525
+1672843473447	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--headless" "--no-sandbox" "--disable-setuid-sandbox" "--disable-extensions" "--start-maximized" "--remote-debugging-port" "65526" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofile0aeKXE"
+*** You are running in headless mode.
+1672843474056	Marionette	INFO	Marionette enabled
+1672843474131	Marionette	INFO	Listening on port 65533
+Read port: 65533
+WebDriver BiDi listening on ws://127.0.0.1:65526
+1672843474316	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+2023-01-04 14:44:34.508 plugin-container[16436:3418384] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 14:44:34.508 plugin-container[16436:3418384] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 14:44:34.644 plugin-container[16436:3418384] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 14:44:34.644 plugin-container[16436:3418384] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 14:44:34.644 plugin-container[16436:3418382] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 14:44:34.644 plugin-container[16436:3418382] nil host used in call to allowsAnyHTTPSCertificateForHost:
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofile0aeKXE/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65526/devtools/browser/53f4689f-fd60-45a8-a1aa-e11cf8cb097f
+1672843476505	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1672843494595	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://client.px-cloud.net/PXdkQo2nT9/main.min.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843505346	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843516125	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843527452	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843538438	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843548913	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843560053	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843570620	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843581336	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843592186	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672843603191	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://soundcloud.com."
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 116: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1672855383719	Marionette	INFO	Stopped listening on port 65087
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1672855549142	geckodriver	INFO	Listening on 127.0.0.1:52058
+1672855549662	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--headless" "--no-sandbox" "--disable-setuid-sandbox" "--disable-extensions" "--start-maximized" "--remote-debugging-port" "52059" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofile2FMKhr"
+*** You are running in headless mode.
+1672855550202	Marionette	INFO	Marionette enabled
+1672855550255	Marionette	INFO	Listening on port 52067
+Read port: 52067
+WebDriver BiDi listening on ws://127.0.0.1:52059
+1672855550457	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+2023-01-04 18:05:50.491 plugin-container[29878:3554791] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:05:50.491 plugin-container[29878:3554791] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 18:05:50.758 plugin-container[29878:3554791] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:05:50.758 plugin-container[29878:3554791] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 18:05:50.759 plugin-container[29878:3554820] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:05:50.759 plugin-container[29878:3554820] nil host used in call to allowsAnyHTTPSCertificateForHost:
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofile2FMKhr/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52059/devtools/browser/b7715db8-edd3-4665-929d-af4a70db711b
+1672855568313	geckodriver	INFO	Listening on 127.0.0.1:52144
+1672855568834	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--headless" "--no-sandbox" "--disable-setuid-sandbox" "--disable-extensions" "--start-maximized" "--remote-debugging-port" "52145" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofilefDxxof"
+*** You are running in headless mode.
+2023-01-04 18:06:09.226 plugin-container[29954:3555438] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:06:09.226 plugin-container[29954:3555438] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 18:06:09.228 plugin-container[29954:3555438] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:06:09.228 plugin-container[29954:3555438] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 18:06:09.228 plugin-container[29954:3555440] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:06:09.228 plugin-container[29954:3555440] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1672855569246	Marionette	INFO	Marionette enabled
+1672855569274	Marionette	INFO	Listening on port 52152
+Read port: 52152
+WebDriver BiDi listening on ws://127.0.0.1:52145
+1672855569456	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofilefDxxof/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52145/devtools/browser/844c0f27-f6e6-4334-b1ac-9113e52e9823
+JavaScript warning: https://client.px-cloud.net/PXdkQo2nT9/main.min.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://client.px-cloud.net/PXdkQo2nT9/main.min.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1672855607457	geckodriver	INFO	Listening on 127.0.0.1:52229
+1672855607975	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--headless" "--no-sandbox" "--disable-setuid-sandbox" "--disable-extensions" "--start-maximized" "--remote-debugging-port" "52230" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofilecHuoBH"
+*** You are running in headless mode.
+1672855608517	Marionette	INFO	Marionette enabled
+1672855608566	Marionette	INFO	Listening on port 52237
+Read port: 52237
+2023-01-04 18:06:48.638 plugin-container[30039:3556319] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:06:48.638 plugin-container[30039:3556319] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 18:06:48.642 plugin-container[30039:3556319] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:06:48.642 plugin-container[30039:3556319] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-01-04 18:06:48.642 plugin-container[30039:3556359] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-01-04 18:06:48.642 plugin-container[30039:3556359] nil host used in call to allowsAnyHTTPSCertificateForHost:
+WebDriver BiDi listening on ws://127.0.0.1:52230
+1672855608709	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/2f/xnzymtln28d_cml5z7wlz6_80000gn/T/rust_mozprofilecHuoBH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:52230/devtools/browser/795fd7f3-06a3-4aa7-b382-77580538013d
+JavaScript warning: https://client.px-cloud.net/PXdkQo2nT9/main.min.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
