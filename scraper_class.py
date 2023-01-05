@@ -42,11 +42,9 @@ class Scraper():
         This method gets the urls of the top 50 charts for each genre
 
         Returns:
-        -----------
+        --------
         all_links: list
             List of all the links retrieved
-        genre_titles: list
-            List of the genre of each link
         '''
         li_tag = self.driver.find_element(By.XPATH, '//li[@data-test-id="selection"]')
         next_button = li_tag.find_element(By.XPATH, '//button[@class="tileGallery__sliderButton tileGallery__slideForwardButton sc-button sc-button-small sc-button-icon"]')
@@ -107,6 +105,10 @@ class Scraper():
         '''
         This method scrolls down the webpage
         
+        Returns:
+        --------
+        songs: list
+            List of songs found in each webpage
         '''
         #Scroll down the page to ensure we retrieve all the relevant data
         last_height = self.driver.execute_script("return document.body.scrollHeight")
@@ -122,13 +124,6 @@ class Scraper():
     def _top_50(self):
         '''
         This method iterates through the songs in each link and creates a dictionary of the top 50 artists and song titles for each genre
-
-        Attributes:
-        -----------
-        artists: list
-            The list of artist names found on the webpages
-        titles: list
-            The list of song titles found on the webpages
         
         Returns:
         --------
