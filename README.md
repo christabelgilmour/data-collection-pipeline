@@ -6,13 +6,13 @@
 
 After setting up a github repository and choosing the website Soundcloud for my project, I created a Scraper class and used Selenium to create methods to navigate the website and use the relevant XPATH to extract data. The first function is used to accept cookies by finding the relevant button and using `click()`.
 
-<img width="694" alt="Screenshot 2022-10-31 at 11 29 50" src="https://user-images.githubusercontent.com/113252944/198998014-f0ef9987-e983-4102-b3ec-cc738ef5ec8a.png">
+<img width="967" alt="Screenshot 2023-01-05 at 15 58 00" src="https://user-images.githubusercontent.com/113252944/210824375-cfb7830a-72b1-4e36-b71f-8afa818f7139.png">
 
 ## Milestone 2
 
 Methods are implemented to extract data from Soundcloud. A method to get links of each page of Top 50 charts for the specific genres is used by iterating through the panel slide on the homepage and scraping the links and titles of each genre. 
 
-<img width="1054" alt="Screenshot 2022-11-15 at 12 22 45" src="https://user-images.githubusercontent.com/113252944/201918807-6966e6a4-35ed-4469-9397-dc8d80172c06.png">
+<img width="986" alt="Screenshot 2023-01-05 at 16 00 13" src="https://user-images.githubusercontent.com/113252944/210824885-36963c9c-3e78-4286-9584-c7c5bb47f5f1.png">
 
 ## Milestone 3
 
@@ -24,19 +24,28 @@ I then created a dictionary for this data of genres and url links.
 
 A new method is created to iterate through each of these url links and call on two functions to extract the intended data. The first function to scroll down the webpage is implemented to ensure all the relevant song data is extracted from each webpage.
 
-<img width="943" alt="Screenshot 2022-11-15 at 12 26 10" src="https://user-images.githubusercontent.com/113252944/201919403-4d7cd037-84aa-41af-ba89-a1907483f49b.png">
+<img width="963" alt="Screenshot 2023-01-05 at 16 01 26" src="https://user-images.githubusercontent.com/113252944/210825251-e6464ba3-1996-4fe7-a4af-4d223e902f22.png">
 
 The second function iterates through all the songs on the webpage and creates dictionaries of the top 50 artist and song titles for each genre are created.
 
-<img width="966" alt="Screenshot 2022-11-15 at 12 15 13" src="https://user-images.githubusercontent.com/113252944/201917502-26251694-55e7-4d63-9cb3-1f0a4cc8c8b0.png">
+<img width="992" alt="Screenshot 2023-01-05 at 16 05 50" src="https://user-images.githubusercontent.com/113252944/210826012-47fdf974-f62e-420d-bc7d-9c2d6f3d5fe6.png">
 
 Code is written to convert these dictionaries into json files, with the genre of each chart as the filename, and these filea are stored locally in a folder called raw_data.
 
-<img width="522" alt="Screenshot 2022-11-15 at 12 33 59" src="https://user-images.githubusercontent.com/113252944/201920804-e8cd2363-c37c-454b-ba7c-b2005c147463.png">
+<img width="845" alt="Screenshot 2023-01-05 at 16 06 19" src="https://user-images.githubusercontent.com/113252944/210826124-e2696dfc-fdff-49af-9001-c66b4cf6a959.png">
 
-Once all these functions are producing the desired outputs, it is necessary to unit test some of the public methods to ensure they are functioning correctly.
+## Milestone 5
 
-Two tests are created, to test that all the url links extracted are in a list, and to test that the last dictionary produced has 50 key-value pairs.
+Once the web scraping tool is built and returns the desired output, the next step is to test all the public methods of the class.
+These include the get_song_data(), make_folder() and write_to_json() methods.
 
-<img width="738" alt="Screenshot 2022-11-29 at 12 01 13" src="https://user-images.githubusercontent.com/113252944/204523803-927c374b-b0f4-4ce6-8e46-1d028f56bd6d.png">
+<img width="828" alt="Screenshot 2023-01-05 at 16 07 41" src="https://user-images.githubusercontent.com/113252944/210826406-43aef5bf-c5f2-4900-9bf0-7be64800761a.png">
+
+<img width="861" alt="Screenshot 2023-01-05 at 16 08 20" src="https://user-images.githubusercontent.com/113252944/210826560-8faafa67-81ee-456e-a0e9-a5505f478621.png">
+
+## Milestone 6
+
+Using Docker, we can now containerise the scraper by creating a docker image where we choose a base image, install any dependencies and run the python file withing the container. Afterwards, the Dockerfile can be pushed to Docker Hub
+
+<img width="992" alt="Screenshot 2023-01-05 at 16 15 24" src="https://user-images.githubusercontent.com/113252944/210828074-2f49bafd-77c6-426e-bc9b-cecf154c25c2.png">
 
