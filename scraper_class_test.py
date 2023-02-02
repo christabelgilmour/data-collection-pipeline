@@ -37,7 +37,6 @@ class ScraperTestCase(unittest.TestCase):
         This method tests whether the dictionaries are converted into json files
         
         '''
-
         test_data = {"BugzyMalone": "Bugzy Malone & TeeDee - Out Of Nowhere",
         "Schak": "Moving All Around (Jumpin') [feat. Kim English]",
         "venbee": "messy in heaven",
