@@ -64,11 +64,9 @@ class Scraper():
             link = genre.find_element(By.XPATH, './/a[@class="playableTile__artworkLink"]').get_attribute('href')
             all_links.append(link)
             genre_titles.append(genre_title)
-        #Create a dictionary of the genres and their url links    
-        genre_dict = {"Genre" : genre_titles , "URL link" : all_links}
-
-        # df_links = pd.DataFrame(genre_dict)
-        # print(df_links)
+        #Create a dictionary of the genres and their url links
+        for i in range(len(genre_titles)):
+            genre_dict = {genre_titles[i] : all_links[i]}
 
         self.make_folder("raw_data")
         self.write_to_json(genre_dict, "genre_dictionary.json")
@@ -97,7 +95,6 @@ class Scraper():
           self._top_50()
           list_of_dictionaries.append(self.song_dict)
         time.sleep(2)
-        print(list_of_dictionaries)
         return list_of_dictionaries
       
   
@@ -139,12 +136,11 @@ class Scraper():
             song_title = song.find_element(By.XPATH, './/a[@class="trackItem__trackTitle sc-link-dark sc-link-primary sc-font-light"]').text
             self.artists.append(song_artist)
             self.titles.append(song_title)
-            self.song_dict = {"Artist" : self.artists , "Title" : self.titles}
+            for i in range(len(self.artists)):
+                self.song_dict = {self.artists[i]: self.titles[i]}
     
         self.write_to_json(self.song_dict, f"{genre}.json")
         time.sleep(2)
-        # df_songs = pd.DataFrame(song_dict)
-        # print(df_songs)
         
     def make_folder(self, foldername):
         '''
